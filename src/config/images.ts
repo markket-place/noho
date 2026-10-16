@@ -78,12 +78,11 @@ const discovered = Object.entries(
 // Unsplash placeholders used when the gallery folder is empty.
 // Replace by adding your own images — the placeholders are removed automatically.
 const placeholders: GalleryImage[] = [
-  { src: 'https://images.unsplash.com/photo-1772567732969-c1506edf80a0?w=600&q=80', alt: 'Completed kitchen renovation' },
-  { src: 'https://images.unsplash.com/photo-1523413363574-c30aa1c2a516?w=600&q=80', alt: 'Bathroom remodel with modern fixtures' },
-  { src: 'https://images.unsplash.com/photo-1761166518480-49279513d65f?w=600&q=80', alt: 'Fresh landscaping and walkway installation' },
-  { src: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?w=600&q=80', alt: 'Interior painting and trim work' },
-  { src: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&q=80', alt: 'Electrical panel upgrade' },
-  { src: 'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=600&q=80', alt: 'Deck construction and staining' },
+  { src: '/images/barbershop-26.png', alt: 'Barbershop 26, North Hollywood' },
+  { src: '/images/betmidrash.png', alt: 'Beth Midrash HaChidah' },
+  { src: '/images/homepage.png', alt: 'Startups & MVPs' },
+  { src: '/images/real-estate.png', alt: 'Real Estate & Constractors' },
+  { src: '/images/daveed.png', alt: 'Consultants & Portfolios' },
 ];
 
 export const galleryImages: GalleryImage[] = discovered.length > 0 ? discovered : placeholders;
