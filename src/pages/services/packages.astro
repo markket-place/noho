@@ -1,0 +1,290 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import Banner from '../../components/Banner.astro';
+import CTA from '../../components/CTA.astro';
+
+const packages = [
+  {
+    name: 'Essential',
+    price: '$1,000',
+    label: 'A professional online home',
+    description:
+      'Everything a small business needs to establish a credible online presence.',
+    features: [
+      'Custom, mobile-friendly website',
+      'Business information and services',
+      'Photo gallery using provided images',
+      'Contact links and Google Maps integration',
+      'Basic search engine optimization',
+      'Domain and deployment setup',
+      'One round of revisions',
+    ],
+    ideal: 'Independent professionals and neighborhood businesses',
+  },
+  {
+    name: 'Professional',
+    price: '$3,000',
+    label: 'Built to help you grow',
+    description:
+      'A more complete website designed to showcase your work and generate new business.',
+    features: [
+      'Everything in Essential',
+      'Multi-page custom website',
+      'Professional photography, as scoped',
+      'Custom copywriting and service pages',
+      'Portfolio, gallery, or testimonials',
+      'Lead-generation forms',
+      'Local SEO and analytics setup',
+      'Two rounds of revisions',
+    ],
+    ideal: 'Growing companies and established service businesses',
+    featured: true,
+  },
+  {
+    name: 'Business Online',
+    price: '$5,000+',
+    label: 'Your business, connected',
+    description:
+      'Custom website functionality that helps customers take the next step.',
+    features: [
+      'Everything in Professional',
+      'Booking and scheduling integrations',
+      'Online payments and deposits',
+      'Product catalogs or online stores',
+      'Custom forms and workflows',
+      'Third-party integrations',
+      'Launch testing and configuration',
+      'Project-specific implementation plan',
+    ],
+    ideal: 'Retailers, studios, and businesses ready to sell or book online',
+  },
+];
+
+const additionalServices = [
+  {
+    title: 'Website Refresh',
+    description:
+      'Already have a website? We can improve the design, update the content, fix problems, and make it work better on phones.',
+    price: 'Projects from $300',
+  },
+  {
+    title: 'Photography & Content',
+    description:
+      'Give customers a real look at your business with professional photos, team portraits, project galleries, and original website content.',
+    price: 'Sessions from $250',
+  },
+  {
+    title: 'Social Media',
+    description:
+      'Consistent, thoughtful content that shows what you do, introduces your team, highlights your work, and keeps your business visible.',
+    price: 'Management from $500/month',
+  },
+  {
+    title: 'Ongoing Website Care',
+    description:
+      'Keep your website current with minor updates, content changes, maintenance, and help when something needs attention.',
+    price: 'From $150/month',
+  },
+  {
+    title: 'Local Business Connections',
+    description:
+      'We believe good businesses should know one another. When there is a natural fit, we are happy to make introductions and help strengthen our local business community.',
+    price: 'Let’s connect',
+  },
+  {
+    title: 'Custom Development',
+    description:
+      'Need something beyond a standard website? We can help with integrations, APIs, online stores, automations, and custom digital tools.',
+    price: 'Scoped to your project',
+  },
+];
+---
+
+<BaseLayout
+  title="Website Packages & Digital Services"
+  description="Professional websites, photography, SEO, social media, and custom digital solutions for local businesses. Choose a package or tell us what you need."
+>
+  <Header slot="header" />
+
+  <Banner title="Services & Packages" />
+
+  <section class="py-section">
+    <div class="mx-auto max-w-site px-4 sm:px-6">
+      <div class="mx-auto mb-12 max-w-3xl text-center">
+        <p class="text-sm font-semibold uppercase tracking-widest text-text-muted">
+          Digital solutions for local business
+        </p>
+
+        <h2 class="mt-3 font-heading text-h2 font-bold text-text">
+          Your business deserves a great website.
+        </h2>
+
+        <p class="mt-5 text-lg leading-relaxed text-text-muted">
+          Whether you're starting from scratch, refreshing an existing
+          website, or ready to take your business online, we make it
+          straightforward to get there.
+        </p>
+
+        <p class="mt-3 leading-relaxed text-text-muted">
+          Choose a package to get started, or tell us what you're working on
+          and we'll put together a plan that fits.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 items-stretch gap-6 lg:grid-cols-3">
+        {packages.map((pkg) => (
+          <article
+            class:list={[
+              'flex flex-col rounded-xl border p-6 sm:p-8',
+              pkg.featured
+                ? 'border-text bg-background shadow-lg ring-1 ring-text'
+                : 'border-border bg-background shadow-sm',
+            ]}
+          >
+            {pkg.featured && (
+              <span class="mb-4 inline-flex w-fit rounded-full bg-text px-3 py-1 text-xs font-semibold uppercase tracking-wide text-background">
+                Most popular
+              </span>
+            )}
+
+            <h3 class="font-heading text-h3 font-bold text-text">
+              {pkg.name}
+            </h3>
+
+            <p class="mt-2 text-sm text-text-muted">{pkg.label}</p>
+
+            <p class="mt-6 font-heading text-4xl font-bold text-text">
+              {pkg.price}
+            </p>
+
+            <p class="mt-4 min-h-16 leading-relaxed text-text-muted">
+              {pkg.description}
+            </p>
+
+            <div class="my-6 border-t border-border"></div>
+
+            <p class="mb-4 text-sm font-semibold text-text">
+              What's included
+            </p>
+
+            <ul class="space-y-3">
+              {pkg.features.map((feature) => (
+                <li class="flex items-start gap-3 text-sm leading-relaxed text-text-muted">
+                  <span
+                    aria-hidden="true"
+                    class="mt-0.5 font-bold text-text"
+                  >
+                    ✓
+                  </span>
+                  <span>{feature}</span>
+                </li>
+              ))}
+            </ul>
+
+            <div class="mt-6 border-t border-border pt-5">
+              <p class="text-xs font-semibold uppercase tracking-wide text-text-muted">
+                Ideal for
+              </p>
+              <p class="mt-2 text-sm leading-relaxed text-text">
+                {pkg.ideal}
+              </p>
+            </div>
+
+            <a
+              href="#get-started"
+              class:list={[
+                'mt-8 inline-flex min-h-12 items-center justify-center rounded-lg px-5 py-3 text-center font-semibold transition',
+                pkg.featured
+                  ? 'bg-text text-background hover:opacity-90'
+                  : 'border border-border text-text hover:bg-text hover:text-background',
+              ]}
+            >
+              Let's Talk
+            </a>
+          </article>
+        ))}
+      </div>
+
+      <p class="mx-auto mt-8 max-w-3xl text-center text-sm leading-relaxed text-text-muted">
+        Prices are starting estimates. Every project is scoped before work
+        begins. Domain registration, hosting, paid software, third-party
+        subscriptions, transaction fees, and other external costs may be
+        additional.
+      </p>
+    </div>
+  </section>
+
+  <section class="border-y border-border bg-background py-section">
+    <div class="mx-auto max-w-site px-4 sm:px-6">
+      <div class="mx-auto mb-12 max-w-2xl text-center">
+        <h2 class="font-heading text-h2 font-bold text-text">
+          More Ways We Can Help
+        </h2>
+
+        <p class="mt-3 leading-relaxed text-text-muted">
+          You don't always need a new website. Sometimes you just need the
+          right improvements, better content, or someone reliable to help
+          you keep moving.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+        {additionalServices.map((service) => (
+          <article class="rounded-xl border border-border bg-background p-6">
+            <h3 class="font-heading text-h3 font-semibold text-text">
+              {service.title}
+            </h3>
+
+            <p class="mt-3 leading-relaxed text-text-muted">
+              {service.description}
+            </p>
+
+            <p class="mt-5 text-sm font-semibold text-text">
+              {service.price}
+            </p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section id="get-started" class="py-section">
+    <div class="mx-auto max-w-3xl px-4 text-center sm:px-6">
+      <h2 class="font-heading text-h2 font-bold text-text">
+        Let's build something good.
+      </h2>
+
+      <p class="mt-4 leading-relaxed text-text-muted">
+        Tell us about your business, what you need, and where you want to
+        go. We'll help you figure out the right next step, without making
+        things more complicated than they need to be.
+      </p>
+
+      <div class="mt-8 flex flex-wrap items-center justify-center gap-4">
+        <!-- <a
+          href="mailto:noho@markket.place?subject=Website%20Project%20Inquiry"
+          class="inline-flex min-h-12 items-center justify-center rounded-lg bg-text px-6 py-3 font-semibold text-background transition hover:opacity-90"
+        >
+          Tell Us About Your Project
+        </a> -->
+
+        <a
+          href="/contact"
+          class="inline-flex min-h-12 items-center justify-center rounded-lg border border-border px-6 py-3 font-semibold text-text transition hover:bg-background"
+        >
+          Contact Us
+        </a>
+      </div>
+
+      <p class="mt-5 text-sm text-text-muted">
+        Local business. Real people. Practical solutions.
+      </p>
+    </div>
+  </section>
+
+  <CTA />
+
+  <Footer slot="footer" />
+</BaseLayout>

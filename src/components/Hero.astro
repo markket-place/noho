@@ -24,10 +24,10 @@ const {
   topper = "NOHO & SFV",
   heading = brand.tagline,
   description = brand.description,
-  ctaLabel = "Get a Free Quote",
-  ctaHref = "/contact",
-  secondaryLabel = "Our Services",
-  secondaryHref = "/services",
+  ctaLabel = "Simple Packages",
+  ctaHref = "/services/packages",
+  secondaryLabel = "",
+  secondaryHref = "",
   imageSrc = localHeroImage ?? PLACEHOLDER,
   imageAlt = "Websites that help local businesses get noticed",
 } = Astro.props;
@@ -70,12 +70,16 @@ const {
         >
           {ctaLabel}
         </a>
-        <a
-          href={secondaryHref}
-          class="inline-flex min-h-11 items-center justify-center rounded-md border-2 border-primary px-6 py-3 text-base font-bold text-primary transition-colors hover:bg-primary hover:text-primary-fg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
-        >
-          {secondaryLabel}
-        </a>
+        {
+          secondaryHref && (
+            <a
+              href={secondaryHref}
+              class="inline-flex min-h-11 items-center justify-center rounded-md border-2 border-primary px-6 py-3 text-base font-bold text-primary transition-colors hover:bg-primary hover:text-primary-fg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+            >
+              {secondaryLabel}
+            </a>
+          )
+        }
       </div>
 
       <!-- Tap-to-call -->

@@ -26,8 +26,8 @@ export const siteData = {
 
   // ── Contact ──────────────────────────────────────────────────────────────
   email: 'noho@markket.place',
-  phoneForTel: '',
-  phoneFormatted: '',
+  phoneForTel: '818 943 4961',
+  phoneFormatted: '(818) 943 4961',
   address: {
     lineOne: '12456 Oxnard St',
     lineTwo: '',
@@ -132,6 +132,7 @@ export const siteData = {
       links: [
         // { label: 'About', href: '/about' },
         { label: 'Services', href: '/services' },
+        { label: 'Packages', href: '/services/packages' },
         // { label: 'Reviews', href: '/reviews' },
         // { label: 'Blog', href: '/blog' },
       ],
