@@ -60,6 +60,110 @@ export const siteData = {
     // { label: 'Blog', href: '/blog' },
     // { label: 'Contact', href: '/contact' },
   ],
+  locals: [
+    {
+      title: 'Remodels & Construction',
+      slug: 'remodels-construction',
+      items: [
+        {
+          name: 'Top Tech Builders',
+          desc: 'Kitchens, baths, additions, ADUs and new builds across Los Angeles, planned, permitted and built by one in-house team.',
+          urls: [{
+            title: 'instagram',
+            url: 'https://www.instagram.com/toptechbuilders'
+          }, {
+            title: 'website',
+            url: 'https://www.toptechbuildersinc.com/?'
+          }]
+        }
+      ],
+      description:
+        'From general contractors, to roofing specialists, teams for every challenge',
+    },
+    {
+      title: 'Trash Dumpsters & Removal',
+      slug: 'dumpsters-&-removal',
+      items: [
+        {
+          name: 'Levi Logistics',
+          desc: '',
+          urls: [{
+            title: '818 200 3883',
+            url: 'tel:+1818200 3883'
+          }]
+        }
+      ],
+      description:
+        'Rent dumpsters or book garbage collections at home, commercial and worksites',
+    },
+    {
+      title: 'Warehouse Rental & Management',
+      slug: 'warehouse-rental-and-management',
+      description:
+        'To support your fulfillment or storage operations',
+    },
+    {
+      title: 'Event Production',
+      slug: 'event-production',
+      items: [
+        {
+          name: 'Angels Music Productions',
+          desc: 'Los Angeles DJs, AV Rental and Event Entertainment',
+          urls: [{
+            title: 'website',
+            url: 'https://angelsmusic.net'
+          }]
+        },
+        {
+          name: 'Adva Riklin Photography',
+          desc: 'Photography and activations for events',
+          urls: [
+            {
+              title: 'instagram',
+              url: 'https://www.instagram.com/advariklin/'
+            }, {
+              title: 'Yelp',
+              url: 'https://www.yelp.com/biz/adva-riklin-photography-sherman-oaks'
+            }, {
+              title: '818 224 8560',
+              url: 'tel:+18182248560'
+            }]
+        }
+      ],
+      description:
+        'Weddings, bar mitzvahs, rentals, music & entertainment',
+    },
+    {
+      title: 'Beauty & Wellness',
+      slug: 'beauty-wellness',
+      items: [
+        {
+          name: 'Le Anqelique',
+          desc: 'Premium Hair Tools • Extensions • Hair Care',
+          urls: [{
+            title: 'website',
+            url: 'https://leangelique.com/?'
+          }]
+        },
+        {
+          name: 'Barbershop 26',
+          desc: 'Good cuts. Great people. Neighborhood barbershop',
+          urls: [{
+            title: 'website',
+            url: 'https://barbershop26.markket.place/'
+          }]
+        },
+      ],
+      description:
+        'Wholesalers to Service Providers',
+    },
+    {
+      title: 'CAD Design & Permits',
+      slug: 'cad-design-and-permits',
+      description:
+        'For individuals and contractors',
+    },
+  ],
 
   // ── Services ─────────────────────────────────────────────────────────────
   services: [
@@ -138,9 +242,9 @@ export const siteData = {
       ],
     },
     {
-      title: 'Support',
+      title: 'Local Directory',
       links: [
-        { label: 'Contact', href: '/contact' },
+        { label: 'Trusted Providers', href: '/locals' },
         // { label: 'Privacy', href: '/privacy' },
         // { label: 'Terms', href: '/terms' },
       ],

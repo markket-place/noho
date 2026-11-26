@@ -1,0 +1,80 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import Banner from "../../components/Banner.astro";
+import CTA from "../../components/CTA.astro";
+import { siteData } from "../../data/siteData";
+
+export function getStaticPaths() {
+  const locals = siteData.locals;
+
+  return (locals || []).map((category) => ({
+    params: { slug: category.slug },
+    props: { category },
+  }));
+}
+
+const { category } = Astro.props;
+---
+
+<BaseLayout
+  title={category.title}
+  description={category.description}
+>
+  <Header slot="header" />
+  <Banner title={category.title} />
+
+  <section class="py-section">
+    <div class="mx-auto max-w-site px-4 sm:px-6">
+      <div class="mx-auto mb-10 max-w-2xl text-center lg:mb-14">
+        <p class="mb-3">
+          <a href="/locals" class="text-cyan-500">
+            ← Local Directory
+          </a>
+        </p>
+
+        <h2 class="font-heading text-h2 font-bold uppercase text-text">
+          {category.title}
+        </h2>
+
+        <p class="mt-3 text-text-muted leading-relaxed">
+          {category.description}
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
+        {category.items?.map((item) => (
+          <article class="rounded-lg border border-border bg-background p-6 shadow-sm">
+            <h3 class="font-heading text-h3 font-semibold text-text">
+              {item.name}
+            </h3>
+
+            <p class="mt-2 text-text-muted leading-relaxed">
+              {item.desc}
+            </p>
+
+            {item.urls?.length > 0 && (
+              <div class="mt-5 flex flex-wrap gap-4">
+                {item.urls.map((link) => (
+                  <a
+                    href={link.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-cyan-600 hover:underline"
+                  >
+                    {link.title}
+                    ↗
+                  </a>
+                ))}
+              </div>
+            )}
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CTA />
+  <Footer slot="footer" />
+</BaseLayout>
