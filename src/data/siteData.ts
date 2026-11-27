@@ -10,20 +10,19 @@
  * production domain.
  * ─────────────────────────────────────────────────────────────────────────────
  */
+import { locals } from './locals';
 
 export const siteData = {
   // ── Business identity ────────────────────────────────────────────────────
   name: 'NOHO Markkët',
-  tagline: '.Websites for North Hollywood & San Fernando Valley businesses.',
+  tagline: '. North Hollywood & San Fernando Valley business support .',
   description:
-    'A fast, mobile-first small-business website template built with Astro 7 and Tailwind v4. Fully customisable for any trade or service business.',
+    'NOHO in the San Fernando Valley is a thriving business community',
   url: 'https://noho.markket.place',
   locale: 'en_US',
-
   /** Business / contractor license number. Displayed in the header and footer
    *  as a trust signal. Set to an empty string to hide it. */
   // license: 'Lic# 123456',
-
   // ── Contact ──────────────────────────────────────────────────────────────
   email: 'noho@markket.place',
   phoneForTel: '818 943 4961',
@@ -44,10 +43,9 @@ export const siteData = {
   ],
   emergencyService: '',
 
-  // ── Social media (set to empty string to hide a link) ────────────────────
   socials: {
     // facebook: 'https://www.facebook.com/',
-    // instagram: 'https://www.instagram.com/',
+    instagram: 'https://www.instagram.com/de.markket/',
     // google: 'https://www.google.com/maps',
   },
 
@@ -60,111 +58,7 @@ export const siteData = {
     // { label: 'Blog', href: '/blog' },
     // { label: 'Contact', href: '/contact' },
   ],
-  locals: [
-    {
-      title: 'Remodels & Construction',
-      slug: 'remodels-construction',
-      items: [
-        {
-          name: 'Top Tech Builders',
-          desc: 'Kitchens, baths, additions, ADUs and new builds across Los Angeles, planned, permitted and built by one in-house team.',
-          urls: [{
-            title: 'instagram',
-            url: 'https://www.instagram.com/toptechbuilders'
-          }, {
-            title: 'website',
-            url: 'https://www.toptechbuildersinc.com/?'
-          }]
-        }
-      ],
-      description:
-        'From general contractors, to roofing specialists, teams for every challenge',
-    },
-    {
-      title: 'Trash Dumpsters & Removal',
-      slug: 'dumpsters-&-removal',
-      items: [
-        {
-          name: 'Levi Logistics',
-          desc: '',
-          urls: [{
-            title: '818 200 3883',
-            url: 'tel:+1818200 3883'
-          }]
-        }
-      ],
-      description:
-        'Rent dumpsters or book garbage collections at home, commercial and worksites',
-    },
-    {
-      title: 'Warehouse Rental & Management',
-      slug: 'warehouse-rental-and-management',
-      description:
-        'To support your fulfillment or storage operations',
-    },
-    {
-      title: 'Event Production',
-      slug: 'event-production',
-      items: [
-        {
-          name: 'Angels Music Productions',
-          desc: 'Los Angeles DJs, AV Rental and Event Entertainment',
-          urls: [{
-            title: 'website',
-            url: 'https://angelsmusic.net'
-          }]
-        },
-        {
-          name: 'Adva Riklin Photography',
-          desc: 'Photography and activations for events',
-          urls: [
-            {
-              title: 'instagram',
-              url: 'https://www.instagram.com/advariklin/'
-            }, {
-              title: 'Yelp',
-              url: 'https://www.yelp.com/biz/adva-riklin-photography-sherman-oaks'
-            }, {
-              title: '818 224 8560',
-              url: 'tel:+18182248560'
-            }]
-        }
-      ],
-      description:
-        'Weddings, bar mitzvahs, rentals, music & entertainment',
-    },
-    {
-      title: 'Beauty & Wellness',
-      slug: 'beauty-wellness',
-      items: [
-        {
-          name: 'Le Anqelique',
-          desc: 'Premium Hair Tools • Extensions • Hair Care',
-          urls: [{
-            title: 'website',
-            url: 'https://leangelique.com/?'
-          }]
-        },
-        {
-          name: 'Barbershop 26',
-          desc: 'Good cuts. Great people. Neighborhood barbershop',
-          urls: [{
-            title: 'website',
-            url: 'https://barbershop26.markket.place/'
-          }]
-        },
-      ],
-      description:
-        'Wholesalers to Service Providers',
-    },
-    {
-      title: 'CAD Design & Permits',
-      slug: 'cad-design-and-permits',
-      description:
-        'For individuals and contractors',
-    },
-  ],
-
+  locals,
   // ── Services ─────────────────────────────────────────────────────────────
   services: [
     {
